@@ -52,11 +52,25 @@ def record_user_audio():
     print("done - result written to "+str(user_name)+".wav")
     return audio_path,user_name
 
+def Serverside_Recording_Training(username,iteration):
+    #print("please speak a word into the microphone")
+    audio_path = 'Dataset/%s/Training/%s (%s).wav'%(username,username,iteration)
+    print("Hello My name is "+str(username)+" and this is my Voice")
+    Recorder(audio_path)    
+    w = "done - result written to Dataset/%s/Training/%s (%s).wav"%(username,username,iteration)
+    return str(w)
 
+def Serverside_Recording_Testing(username,iteration):
+    #print("please speak a word into the microphone")
+    audio_path = 'Dataset/%s/Testing/%s (%s).wav'%(username,username,iteration)
+    print("Hello My name is "+str(username)+" and this is my Voice")
+    Recorder(audio_path)    
+    w = "done - result written to Dataset/%s/Testing/%s (%s).wav"%(username,username,iteration)
+    return str(w)
 
 def record_user_audio_testing():
     print("please speak a word into the microphone")
-    user_name = raw_input("Enter User_Name For Testing: ")
+    user_name = input("Enter User_Name For Testing: ")
 
     audio_path = 'trainingData/Tests/'+str(user_name)+'.wav'
     print("Hello My name is "+user_name+" and this is my Voice")

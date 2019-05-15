@@ -1,12 +1,12 @@
 import numpy as np
 import os
+from python_speech_features import mfcc
 import sys
-sys.path.append(os.path.abspath("C:/Users/panch/Desktop/Version3/libs/filters/"))
+sys.path.append(os.path.abspath("C:/Users/panchalyash13/Desktop/POC_Speaker_Recognition/Speaker_Recognition/libs/filters/"))
 import silence as silence_reduction 
 import pandas as pd
 import librosa
 import logmmse
-from python_speech_features import mfcc
 
 
 def Feature_Extraction(fs,sig,user,i):
